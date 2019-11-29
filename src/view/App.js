@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Main from './Main';
 import { extname } from 'path';
+import { HashRouter } from "react-router-dom"
 /* import { ReactComponent } from '*.svg'; */
 
 
@@ -13,8 +14,12 @@ class App extends React.Component {
     super(props)
 
     this.state = {
-      isGrid: false
+      isGrid: false,
+
     }
+
+  }
+  refresh() {
 
   }
 
@@ -36,6 +41,7 @@ class App extends React.Component {
     </>
   }
 }
+
 
 
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import UsersList from "./UsersList";
 import { fetchUsers } from '../../services/UserServices';
-//import Header from "../components/Header"
 import Grid from './Grid'
 
 class UsersPage extends React.Component {
@@ -9,7 +8,7 @@ class UsersPage extends React.Component {
         super(props)
 
         this.state = {
-            users: [],
+            users: []
 
         };
     }

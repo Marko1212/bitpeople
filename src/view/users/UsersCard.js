@@ -11,7 +11,9 @@ const UsersCard = (props) => {
                     <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
                 </div>
                 <span>{props.user.email}</span> <br />
-                <span>{props.user.dob}</span>
+
+                <span>{props.user.dob}</span><br /><br />
+
 
             </div>
         </div>
