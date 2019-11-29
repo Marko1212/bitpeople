@@ -11,7 +11,11 @@ class UsersPage extends React.Component {
         };
     }
 
-    loadUsers() {
+  /*   loadUsers() {
+        fetchUsers().then((users) => { this.setState({ users: users }) })
+    } */
+
+    componentDidMount() {
         fetchUsers().then((users) => { this.setState({ users: users }) })
     }
 
@@ -20,13 +24,13 @@ class UsersPage extends React.Component {
     render() {
         return (
             <>
-                <button onClick={(event) => {
+{/*                 <button onClick={(event) => {
                     return this.loadUsers()
 
                 }
 
 
-                }>Reload</button>
+                }>Reload</button> */}
                 <UsersList users={this.state.users} />
             </>
         )
