@@ -2,14 +2,22 @@ import React from 'react';
 import UsersPage from './users/UsersPage';
 
 
-const Main = (props) => {
+class Main extends React.Component {
+    constructor(props) {
+        super(props)
+    }
 
-    return (
-        <main>
-            <UsersPage />
-        </main>
-    )
 
+    render() {
+        return (
+            <main>
+                <UsersPage isGrid={this.props.isGrid} />
+            </main>
+        )
+
+    }
 }
+
+
 
 export default Main;
