@@ -14,12 +14,19 @@ class App extends React.Component {
     super(props)
 
     this.state = {
-      isGrid: false,
+      isGrid: false
 
     }
 
   }
-  refresh() {
+  refresh = () => {
+
+    this.setState(prevState => {
+      return {
+        isGrid: prevState.isGrid
+      }
+    })
+
 
   }
 
@@ -34,7 +41,7 @@ class App extends React.Component {
 
   render() {
     return <>
-      <Header changeLayout={this.changeLayout} />
+      <Header changeLayout={this.changeLayout} refresh = {this.refresh} />
       <Main isGrid={this.state.isGrid} />
       <Footer />
 

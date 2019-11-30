@@ -1,13 +1,15 @@
-import React from 'react'
+import React from 'react';
 
 
 
 const About = (props) => {
 
     return (
+
         <div>
             <p>gftgtrhghtrhrththt</p>
         </div>
+
     )
 
 }
