@@ -8,7 +8,7 @@ class Main extends React.Component {
     render() {
         return (
             <main>
-                <Route exact path="/" component={() => <UsersPage isGrid={this.props.isGrid} />} />
+                <Route exact path="/" component={UsersPage} />
                 <Route exact path="/about" component={About} />
             </main>
         )

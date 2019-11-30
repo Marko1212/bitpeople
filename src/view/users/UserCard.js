@@ -8,7 +8,7 @@ const UserCard = (props) => {
                 <div className="card-image">
                     <img src={props.user.image1} />
                     <span className="card-title">{props.user.name}</span>
-                   {/*  <a className="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons"></i></a> */}
+                    {/*  <a className="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons"></i></a> */}
                 </div>
                 <span>{props.user.protectEmail()}</span> <br />
 
