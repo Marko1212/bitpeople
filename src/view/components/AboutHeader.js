@@ -8,7 +8,7 @@ const AboutHeader = (props) => {
 
         <nav>
             <div className="nav-wrapper">
-                <a href="#!" className="brand-logo"><Link to='/'>BIT PEOPLE</Link></a>
+                {/* <a href="#!" className="brand-logo"> */}<Link className="brand-logo" to='/'>BIT PEOPLE</Link>{/* </a> */}
             </div>
         </nav >
 

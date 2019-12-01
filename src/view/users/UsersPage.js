@@ -4,6 +4,7 @@ import { fetchUsers } from '../../services/UserServices';
 import Grid from './Grid'
 import ActionButtons from './ActionButtons'
 import Search from './Search'
+import { LoadingScreen } from "./LoadingScreen"
 
 
 class UsersPage extends React.Component {
@@ -13,7 +14,8 @@ class UsersPage extends React.Component {
         this.state = {
             isGrid: false,
             users: [],
-            query: ''
+            query: '',
+            isLoading: true
         };
     }
 
@@ -33,25 +35,30 @@ class UsersPage extends React.Component {
         })
     }
 
-
-
     componentDidMount() {
-        fetchUsers().then((users) => { this.setState({ users: users }) })
+
+        fetchUsers().then((users) => { this.setState({ isLoading: false, users: users }) });
+
     }
 
     refresh = () => {
-        return (fetchUsers().then((users) => { this.setState({ users: users }) }))
+        this.setState({isLoading : true});
+        return (fetchUsers().then((users) => { this.setState( {isLoading: false, users: users }) }))
 
     }
-
-
 
 
 
     render() {
+
         const filteredUsers = this.state.users.filter(user => user
             .getName()
             .includes(this.state.query.toLowerCase()))
+
+        if (this.state.isLoading) {
+            console.log("loading data");
+            return <LoadingScreen />
+        }
 
         if (this.state.isGrid) {
             return <>
