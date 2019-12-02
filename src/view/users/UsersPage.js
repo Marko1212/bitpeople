@@ -25,21 +25,32 @@ class UsersPage extends React.Component {
     }
 
     changeLayout = () => {
+        
         this.setState(prevState => {
-
             return {
 
                 isGrid: !prevState.isGrid
 
             }
         })
+
+        localStorage.setItem("isGrid", !this.state.isGrid);
+
     }
 
     componentDidMount() {
 
+        if (localStorage.getItem('isGrid')) {
+            let isGrid = JSON.parse(localStorage.getItem('isGrid'));
+            console.log(isGrid);
+            this.setState({
+                isGrid: isGrid
+            });
+        }
         fetchUsers().then((users) => { this.setState({ isLoading: false, users: users }) });
 
-    }
+   
+}
 
     refresh = () => {
         this.setState({isLoading : true});
@@ -49,7 +60,7 @@ class UsersPage extends React.Component {
 
 
 
-    render() {
+    render = () =>  {
 
         const filteredUsers = this.state.users.filter(user => user
             .getName()
@@ -80,8 +91,8 @@ class UsersPage extends React.Component {
             <UsersList users={filteredUsers} />
         </>
     }
-}
 
+}
 
 
 export default UsersPage;
